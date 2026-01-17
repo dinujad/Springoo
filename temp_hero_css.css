@@ -1,0 +1,139 @@
+/* Refactored Hero Section */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    /* Adjustable height */
+    min-height: 600px;
+    width: 100%;
+    /* Placeholder for the user to replace with their Green Saree image */
+    background-image: url('../images/editorial-spring.png');
+    /* Fallback to existing nice image */
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align content to left */
+    overflow: hidden;
+}
+
+/* Remove the previous gradient overlay */
+.hero-section::before {
+    display: none;
+}
+
+/* Ensure text is legible without a full overlay users prefer, 
+   but maybe a subtle side gradient is needed if the image is busy. 
+   User said "remove overlay", but text needs to be visible. 
+   I will add a very subtle side shadow or rely on the image being dark enough/clear enough on the left.
+   For now, strictly following "remove overlay" but adding text shadow.
+*/
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    width: 100%;
+    z-index: 10;
+}
+
+.hero-text-content {
+    max-width: 600px;
+    /* Limit width */
+    text-align: left;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(207, 170, 86, 0.2);
+    color: #F0E68C;
+    /* Light Yellow */
+    border: 1px solid #CFAA56;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: none;
+    /* Reference shows standard case */
+}
+
+.highlight-text {
+    font-family: 'Cinzel', serif;
+    /* Use the elegant font for "Every Gem" */
+    font-style: italic;
+    color: #FFD700;
+    /* Vibrant Gold/Yellow */
+    display: block;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 500px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn.bg-yellow {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    font-weight: 700;
+}
+
+.btn.bg-yellow:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn.text-white {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn.text-white:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text-content {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        /* Slight visibility boost on mobile */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+}

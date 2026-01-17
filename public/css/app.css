@@ -1,37 +1,194 @@
-@import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap);
-/* Fonts */
+@import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap);
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    background-color: #faf9f6;
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --color-primary: #0F3D3E;
+    /* Deep Forest Green */
+    --color-primary-dark: #0A2A2B;
+    --color-accent: #CFAA56;
+    /* Luxurious Gold */
+    --color-accent-light: #E6C87C;
+    --color-bg: #F8FDF9;
+    /* Very Light Mint/White */
+    --color-surface: #FFFFFF;
+    --color-text-main: #1A3C3D;
+    /* Dark Green-Grey */
+    --color-text-light: #6B8586;
+
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --shadow-sm: 0 4px 6px rgba(15, 61, 62, 0.05);
+    --shadow-md: 0 10px 30px rgba(15, 61, 62, 0.08);
+    --shadow-lg: 0 20px 50px rgba(15, 61, 62, 0.15);
+
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Header Styles */
-.site-header {
-    background-color: #faf9f6;
-    /* Usage of off-white cream background */
-    padding: 20px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    /* Very subtle shadow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   2. TYPOGRAPHY & UTILITIES
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.sub-heading {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.divider-wrapper {
+    margin: 15px auto;
+    width: 200px;
+    /* Adjusted size */
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(207, 170, 86, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    transform: translateY(-2px);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. ANIMATIONS
+   ========================================= */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* =========================================
+   4. HEADER
+   ========================================= */
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(15, 61, 62, 0.05);
 }
 
 .header-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo */
-.logo a {
-    text-decoration: none;
-    display: flex;
     align-items: center;
 }
 
@@ -41,277 +198,895 @@ body {
 }
 
 .logo-text {
-    font-family: 'Cinzel', serif;
-    font-size: 32px;
-    color: #d4af37;
-    /* Gold color */
-    letter-spacing: 3px;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
     font-weight: 700;
+    letter-spacing: 2px;
 }
 
-/* Navigation */
-.main-nav>ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.main-nav ul {
     display: flex;
     gap: 30px;
-    position: relative;
-    /* Context for mega menu if needed, though we use container usually */
-}
-
-.main-nav>ul>li {
-    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
-    text-decoration: none;
-    color: #333;
+    font-size: 0.85rem;
     font-weight: 600;
-    font-size: 14px;
+    color: var(--color-text-main);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-    padding: 10px 0;
-    /* Add padding for better hover target */
+    position: relative;
+    padding-bottom: 5px;
     display: block;
 }
 
-.main-nav a:hover {
-    color: #d4af37;
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
 }
 
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Mega Menu Fixes */
 .has-dropdown {
     position: relative;
-    /* Keep it relative for simple dropdowns, but for mega menu we might want static if full width */
-}
-
-/* Mega Menu Logic */
-.mega-menu-parent {
-    position: static;
-    /* Allows the mega menu to span the full header/container width if positioned relative to container or header */
 }
 
 .mega-menu {
-    visibility: hidden;
-    /* Use visibility/opacity for transition */
-    opacity: 0;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    /* Softer shadow */
-    z-index: 100;
+    background: #fff;
+    box-shadow: var(--shadow-md);
     padding: 30px 0;
-    border-top: 1px solid #eee;
-
-    /* Smooth Transition */
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-    /* Prevent interaction when hidden */
+    z-index: 1100;
+    border-top: 3px solid var(--color-accent);
 }
 
-/* HOVER ONLY - Explicitly requested "cursor arn giyama open wenna" (open when cursor goes there) */
-.mega-menu-parent:hover .mega-menu {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+.main-nav li:hover .mega-menu {
+    display: block;
+    animation: fadeUp 0.3s ease-out forwards;
 }
 
 .mega-menu-inner {
     display: flex;
     justify-content: space-between;
-}
-
-.mega-column {
-    flex: 1;
-    padding-right: 20px;
+    gap: 40px;
 }
 
 .mega-column h4 {
-    font-family: 'Cinzel', serif;
-    color: #333;
-    font-size: 16px;
+    font-size: 1rem;
+    color: var(--color-primary);
     margin-bottom: 15px;
-    border-bottom: 1px solid #d4af37;
-    display: inline-block;
-    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
 .mega-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: block;
 }
 
-.mega-column ul li {
+.mega-column li {
     margin-bottom: 10px;
 }
 
-.mega-column ul li a {
+.mega-column a {
     text-transform: none;
-    /* Normal text for sub-items */
     font-weight: 500;
-    font-size: 14px;
-    color: #555;
-    padding: 0;
-}
-
-.mega-column ul li a:hover {
-    color: #d4af37;
-    padding-left: 5px;
-    /* Subtle movement */
+    font-size: 0.9rem;
+    color: #666;
 }
 
 /* Gold Price Info */
 .gold-price-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+    background-color: rgba(207, 170, 86, 0.1);
+    /* Light gold bg */
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(207, 170, 86, 0.3);
 }
 
-/* Hero Section */
+.price-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.date-label {
+    font-size: 0.7rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.price-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
 .hero-section {
-    /* Using local generated image */
-    background-image: url('/images/hero-bg-final.png');
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    /* Background image moved to inline style in welcome.blade.php */
     background-size: cover;
     background-position: center;
-    /* Full screen as requested */
-    height: 100vh;
     display: flex;
     align-items: center;
-    color: white;
-    position: relative;
-    /* Add left padding to shift text into the empty dark space */
-    padding-left: 8%;
+    overflow: hidden;
 }
 
-/* Linear Gradient Overlay for text readability */
+/* Green & Gold Gradient Overlay */
 .hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 65%;
-    /* Gradient on left side */
-    height: 100%;
-    background: linear-gradient(90deg, rgba(8, 12, 18, 0.9) 0%, rgba(10, 10, 20, 0.6) 60%, rgba(10, 10, 20, 0) 100%);
-}
-
-.h-100 {
-    height: 100%;
-    display: flex;
-    align-items: center;
     width: 100%;
-}
-
-/* Override Container for Hero to allow text far left */
-.hero-section .container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(15, 61, 62, 0.9) 0%,
+            rgba(15, 61, 62, 0.7) 40%,
+            rgba(15, 61, 62, 0.2) 100%);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-    /* Text is now positioned by the section padding */
-}
-
-/* "Timeless Elegance..." typography match */
-.hero-title {
-    font-family: 'Cinzel', serif;
-    font-size: 4rem;
-    /* Adjusted for this layout */
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 25px;
-    letter-spacing: 0px;
+    max-width: 600px;
     color: #fff;
-    text-transform: none;
-    /* Keep Pascal Case as per sample */
-}
-
-/* Remove minimal small text styles if present or reset */
-.hero-small,
-.hero-subtitle-text {
-    display: none;
+    padding-left: 20px;
+    /* Slight offset */
 }
 
 .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
+    display: block;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title span {
+    color: var(--color-accent);
+    /* Highlight "Collection" or "Gold" */
+    font-style: italic;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* =========================================
+   6. SECTIONS COMMON
+   ========================================= */
+section {
+    padding: 100px 0;
+}
+
+/* =========================================
+   7. LATEST COLLECTIONS (Cards)
+   ========================================= */
+.collections-section {
+    background-color: var(--color-bg);
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.collection-card {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.collection-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.collection-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease;
+}
+
+.collection-card:hover .collection-image {
+    transform: scale(1.1);
+}
+
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(15, 61, 62, 0.95), transparent);
+    color: #fff;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.collection-card:hover .collection-overlay {
+    background: linear-gradient(to top, rgba(15, 61, 62, 1), rgba(15, 61, 62, 0.6));
+    transform: translateY(0);
+}
+
+.collection-logo .brand-name {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+.collection-title {
+    color: #fff;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.collection-subtitle {
+    color: #ddd;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   8. OUR JEWELLERY (Icon Grid)
+   ========================================= */
+.our-jewellery-section {
+    background-color: #fff;
+}
+
+.jewellery-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.category-card:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-bg);
+    transform: translateY(-5px);
+}
+
+.category-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-image {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-accent);
+}
+
+.category-image img {
+    height: 60%;
+    width: auto;
+}
+
+.category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   9. SHOP SECTION (Modern Carousel)
+   ========================================= */
+.shop-section {
+    background-color: var(--color-bg);
+}
+
+.shop-controls {
+    position: relative;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.shop-card {
+    background: #fff;
+    padding: 20px;
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid rgba(15, 61, 62, 0.05);
+}
+
+.shop-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+}
+
+.shop-image {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.shop-image img {
+    max-height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.shop-card:hover .shop-image img {
+    transform: scale(1.1);
+}
+
+.shop-info {
+    text-align: center;
+}
+
+.product-code {
+    display: block;
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.shop-card:hover .view-more-btn {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+}
+
+/* Nav Buttons */
+.shop-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    position: absolute;
+    top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-nav-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+}
+
+.prev-btn {
+    right: 60px;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.shop-pagination .dot {
+    background-color: #ddd;
+    width: 10px;
+    height: 10px;
+}
+
+.shop-pagination .dot.active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
+}
+
+/* =========================================
+   10. EDITORIAL SECTION
+   ========================================= */
+.editorial-section {
+    background-color: #fff;
+    padding: 0;
+}
+
+.editorial-container {
+    display: flex;
+    min-height: 650px;
+}
+
+.editorial-content {
+    flex: 1;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.editorial-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.editorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.editorial-container:hover .editorial-image img {
+    transform: scale(1.05);
+}
+
+.editorial-description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.feature-icon {
+    background-color: var(--color-bg);
+    width: 60px;
+    /* Larger icons */
+    height: 60px;
+}
+
+/* =========================================
+   11. FOOTER (Dark Theme)
+   ========================================= */
+/* =========================================
+   11. FOOTER (Premium Gold & Green)
+   ========================================= */
+.footer-section {
+    background: linear-gradient(to bottom, #0F3D3E, #05191a);
+    color: #fff;
+    padding: 100px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Gold sheen overlay with movement */
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--color-accent) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    opacity: 0.8;
+    animation: goldFlow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes goldFlow {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.footer-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.brand-col {
+    flex: 1.5;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.brand-icon {
+    width: auto;
+    height: 180px;
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+}
+
+.brand-icon:hover {
+    transform: scale(1.02);
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-tagline {
+    font-family: var(--font-heading);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
-    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 350px;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 15px;
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.footer-col:hover .footer-heading::after {
+    width: 100%;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+    padding-left: 10px;
+    text-shadow: 0 0 10px rgba(207, 170, 86, 0.3);
+}
+
+.footer-links a::before {
+    content: '›';
+    position: absolute;
+    left: -10px;
+    opacity: 0;
+    color: var(--color-accent);
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.social-icon:hover {
+    color: var(--color-accent);
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(207, 170, 86, 0.6));
+}
+
+/* Payment Banner Styling */
+.payment-banner-container {
+    text-align: right;
+    margin-top: 60px;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.payment-banner-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(207, 170, 86, 0.5));
+}
+
+.payment-banner-img {
+    display: inline-block;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.payment-banner-img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   12. RESPONSIVENESS
+   ========================================= */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .collections-grid,
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jewellery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .editorial-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .collections-grid,
+    .shop-grid,
+    .jewellery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+    }
+}
+
+/* Refactored Hero Section */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    /* Adjustable height */
+    min-height: 600px;
+    width: 100%;
+    /* Placeholder for the user to replace with their Green Saree image */
+    background-image: url('../images/editorial-spring.png');
+    /* Fallback to existing nice image */
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align content to left */
+    overflow: hidden;
+}
+
+/* Remove the previous gradient overlay */
+.hero-section::before {
+    display: none;
+}
+
+/* Ensure text is legible without a full overlay users prefer, 
+   but maybe a subtle side gradient is needed if the image is busy. 
+   User said "remove overlay", but text needs to be visible. 
+   I will add a very subtle side shadow or rely on the image being dark enough/clear enough on the left.
+   For now, strictly following "remove overlay" but adding text shadow.
+*/
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    width: 100%;
+    z-index: 10;
+}
+
+.hero-text-content {
+    max-width: 600px;
+    /* Limit width */
+    text-align: left;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(207, 170, 86, 0.2);
+    color: #F0E68C;
+    /* Light Yellow */
+    border: 1px solid #CFAA56;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: none;
+    /* Reference shows standard case */
+}
+
+.highlight-text {
+    font-family: 'Cinzel', serif;
+    /* Use the elegant font for "Every Gem" */
+    font-style: italic;
+    color: #FFD700;
+    /* Vibrant Gold/Yellow */
+    display: block;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #f0f0f0;
     margin-bottom: 40px;
     line-height: 1.6;
-    max-width: 450px;
+    max-width: 500px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-actions {
     display: flex;
     gap: 20px;
-    margin-top: 0;
 }
 
-.btn {
-    display: inline-block;
-    padding: 15px 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-    border: 1px solid white;
-}
-
-.btn-primary {
-    background-color: white;
-    color: black;
-    border-color: white;
-}
-
-.btn-primary:hover {
-    background-color: #f0f0f0;
-    border-color: #f0f0f0;
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: white;
-    border-color: white;
-}
-
-.btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.gold-icon svg {
-    display: block;
-}
-
-.price-details {
-    text-align: right;
-}
-
-.date-label {
-    font-size: 11px;
-    color: #666;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-}
-
-.price-value {
-    font-size: 18px;
-    color: #d4af37;
+.btn.bg-yellow {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
     font-weight: 700;
-    letter-spacing: 0.5px;
+}
+
+.btn.bg-yellow:hover {
+    background-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn.text-white {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn.text-white:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text-content {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        /* Slight visibility boost on mobile */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
 }
