@@ -243,20 +243,45 @@ h6 {
 
 /* Mega Menu Fixes */
 .has-dropdown {
+    position: static !important;
+    /* Key for full width */
+}
+
+/* Add a bridge to prevent gap issues */
+.main-nav>ul>li {
     position: relative;
+    /* Clean implementation without layout hacks */
 }
 
 .mega-menu {
     display: none;
     position: absolute;
     top: 100%;
+    /* Positions exactly below the header container */
     left: 0;
     width: 100%;
     background: #fff;
-    box-shadow: var(--shadow-md);
-    padding: 30px 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px 0;
     z-index: 1100;
     border-top: 3px solid var(--color-accent);
+}
+
+/* 
+   ROBUST HOVER BRIDGE:
+   Create an invisible area above the menu to catch the cursor 
+   as it leaves the nav item. This bridges the gap caused by header padding.
+*/
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    /* Extends 50px upwards to catch the cursor */
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    z-index: 1101;
 }
 
 .main-nav li:hover .mega-menu {
@@ -265,32 +290,119 @@ h6 {
 }
 
 .mega-menu-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 60px;
 }
 
-.mega-column h4 {
-    font-size: 1rem;
+.mega-heading {
+    font-size: 1.1rem;
     color: var(--color-primary);
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding-bottom: 10px;
 }
 
-.mega-column ul {
-    display: block;
+/* Category Grid */
+.mega-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.mega-column li {
-    margin-bottom: 10px;
-}
-
-.mega-column a {
-    text-transform: none;
+.mega-cat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-text-main) !important;
     font-weight: 500;
-    font-size: 0.9rem;
-    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.mega-cat-item:hover {
+    transform: translateX(5px);
+    color: var(--color-accent) !important;
+}
+
+.cat-icon-small {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+}
+
+.mega-cat-item:hover .cat-icon-small {
+    opacity: 1;
+    filter: invert(56%) sepia(35%) saturate(632%) hue-rotate(359deg) brightness(92%) contrast(87%);
+    /* approximate gold */
+}
+
+/* Latest Products Grid */
+.mega-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.mega-prod-item {
+    text-align: center;
+}
+
+.mega-prod-img {
+    background: #F8FDF9;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.mega-prod-item:hover .mega-prod-img {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-sm);
+}
+
+.mega-prod-code {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 600;
+}
+
+/* Featured Column */
+.featured-column {
+    height: 100%;
+}
+
+.mega-featured-img {
+    position: relative;
+    height: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.mega-featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mega-featured-img:hover img {
+    transform: scale(1.05);
+}
+
+.mega-featured-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 20px;
+    color: #fff;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
 }
 
 /* Gold Price Info */
@@ -654,46 +766,185 @@ section {
 /* =========================================
    10. EDITORIAL SECTION
    ========================================= */
+/* =========================================
+   10. EDITORIAL SECTION (Modern & Vibrant)
+   ========================================= */
 .editorial-section {
     background-color: #fff;
     padding: 0;
+    overflow: hidden;
 }
 
 .editorial-container {
     display: flex;
-    min-height: 650px;
+    min-height: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .editorial-content {
     flex: 1;
-    padding: 80px 60px;
+    padding: 80px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff;
+    /* Modern soft gradient background */
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFF0E6 50%, #fcfbf4 100%);
+    position: relative;
+    z-index: 2;
+}
+
+/* Decorative element */
+.editorial-content::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(207, 170, 86, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.editorial-label {
+    color: var(--color-accent);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+    position: relative;
+    padding-left: 50px;
+}
+
+.editorial-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.editorial-title {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+    /* Gradient text effect */
+    background: linear-gradient(45deg, var(--color-primary), #2c5e5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.editorial-description {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+    line-height: 1.8;
+    max-width: 500px;
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+    opacity: 0;
 }
 
 .editorial-image {
-    flex: 1;
+    flex: 1.2;
     position: relative;
     overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
 }
 
 .editorial-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s ease;
+    transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .editorial-container:hover .editorial-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
-.editorial-description {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
+/* Features with Animation */
+.editorial-features {
     margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid transparent;
+}
+
+.feature-item:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-color: rgba(207, 170, 86, 0.2);
+    transform: translateX(10px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.feature-icon img {
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .feature-icon {
@@ -765,12 +1016,12 @@ section {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
 }
 
 .brand-icon {
     width: auto;
-    height: 180px;
+    height: 70px;
     flex-shrink: 0;
     transition: transform 0.5s ease;
 }
@@ -876,41 +1127,7 @@ section {
     filter: drop-shadow(0 0 8px rgba(207, 170, 86, 0.6));
 }
 
-/* Payment Banner Styling */
-.payment-banner-container {
-    text-align: right;
-    margin-top: 60px;
-    padding-top: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-}
 
-.payment-banner-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(207, 170, 86, 0.5));
-}
-
-.payment-banner-img {
-    display: inline-block;
-    opacity: 0.8;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
-}
-
-.payment-banner-img:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* =========================================
    12. RESPONSIVENESS
@@ -1089,4 +1306,48 @@ section {
     .hero-actions {
         justify-content: center;
     }
+}
+
+/* Editorial Button - Modern Style */
+.editorial-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, var(--color-primary), #05191a);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.8s ease 0.8s forwards;
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 30px;
+    /* soft rounded */
+}
+
+.editorial-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--color-accent);
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.editorial-btn:hover {
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(207, 170, 86, 0.3);
+    transform: translateY(-3px);
+}
+
+.editorial-btn:hover::before {
+    width: 100%;
 }

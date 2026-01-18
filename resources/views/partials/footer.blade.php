@@ -21,44 +21,50 @@
             </div>
         </div>
 
-        <!-- Shop Column -->
-        <div class="footer-col">
-            <h4 class="footer-heading">Shop</h4>
-            <ul class="footer-links">
-                <li><a href="#">All Jewelry</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Necklaces</a></li>
-                <li><a href="#">Earrings</a></li>
-                <li><a href="#">Rings</a></li>
-            </ul>
-        </div>
+        <!-- Links Columns Wrapper -->
+        <div style="flex: 3; display: flex; flex-direction: column;">
+             <div style="display: flex; justify-content: space-between; width: 100%;">
+                <!-- Shop Column -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">All Jewelry</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Necklaces</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Rings</a></li>
+                    </ul>
+                </div>
 
-        <!-- Company Column -->
-        <div class="footer-col">
-            <h4 class="footer-heading">Company</h4>
-            <ul class="footer-links">
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Sustainability</a></li>
-                <li><a href="#">Stores</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
-        </div>
+                <!-- Company Column -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Stores</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
 
-        <!-- Support Column -->
-        <div class="footer-col">
-            <h4 class="footer-heading">Support</h4>
-            <ul class="footer-links">
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Shipping & Returns</a></li>
-                <li><a href="#">Size Guide</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-            
-            <div style="margin-top: 30px;">
-                <a href="https://www.payhere.lk" target="_blank">
-                    <img src="https://www.payhere.lk/downloads/images/payhere_long_banner.png" alt="PayHere" style="max-width: 100%; height: auto; opacity: 0.9;"/>
-                </a>
-            </div>
+                <!-- Support Column -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+             </div>
+             
+             <!-- Payment Banner Row -->
+             <div style="margin-top: 40px; text-align: left;">
+                  <a href="https://www.payhere.lk" target="_blank">
+                        <img src="https://www.payhere.lk/downloads/images/payhere_long_banner.png" alt="PayHere" style="width: 450px; max-width: 100%; height: auto; opacity: 0.9;"/>
+                  </a>
+             </div>
         </div>
     </div>
 </footer>

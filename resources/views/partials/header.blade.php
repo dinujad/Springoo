@@ -4,10 +4,7 @@
             <!-- Logo Section -->
             <div class="logo">
                 <a href="{{ url('/') }}">
-                    <div class="logo-container">
-                        <!-- Simplified logo presentation: Icon + Text -->
-                        <span class="logo-text">SPRINGOO</span>
-                    </div>
+                    <img src="{{ asset('images/logo_header.png') }}" alt="Springoo Logo" style="max-height: 80px; width: auto; object-fit: contain;">
                 </a>
             </div>
 
@@ -21,31 +18,79 @@
                         <div class="mega-menu">
                             <div class="container">
                                 <div class="mega-menu-inner">
-                                    <div class="mega-column">
-                                        <h4>Categories</h4>
-                                        <ul>
-                                            <li><a href="#">Necklaces</a></li>
-                                            <li><a href="#">Rings</a></li>
-                                            <li><a href="#">Bangles</a></li>
-                                            <li><a href="#">Earrings</a></li>
-                                            <li><a href="#">Bracelets</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-column">
-                                        <h4>Collections</h4>
-                                        <ul>
-                                            <li><a href="#">Bridal</a></li>
-                                            <li><a href="#">Casual Wear</a></li>
-                                            <li><a href="#">Gift Ideas</a></li>
-                                            <li><a href="#">New Arrivals</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="mega-column featured-image">
-                                        <!-- Placeholder for a featured image in the menu -->
-                                        <div style="width: 100%; height: 150px; background-color: #f0e68c; display: flex; align-items: center; justify-content: center; color: #b8860b;">
-                                            Featured Image
+                                    
+                                    <!-- Col 1: Categories -->
+                                    <div class="mega-column category-column">
+                                        <h4 class="mega-heading">OUR JEWELLERY</h4>
+                                        <div class="mega-category-grid">
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-necklace.png') }}" class="cat-icon-small" alt="Necklaces">
+                                                <span>Necklaces</span>
+                                            </a>
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-chain.png') }}" class="cat-icon-small" alt="Chains">
+                                                <span>Chains</span>
+                                            </a>
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-pendant.png') }}" class="cat-icon-small" alt="Pendants">
+                                                <span>Pendants</span>
+                                            </a>
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-bangle.png') }}" class="cat-icon-small" alt="Bangles">
+                                                <span>Bangles</span>
+                                            </a>
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-earring.png') }}" class="cat-icon-small" alt="Earrings">
+                                                <span>Earrings</span>
+                                            </a>
+                                            <a href="#" class="mega-cat-item">
+                                                <img src="{{ asset('images/cat-ring.png') }}" class="cat-icon-small" alt="Rings">
+                                                <span>Rings</span>
+                                            </a>
                                         </div>
                                     </div>
+
+                                    <!-- Col 2: Latest Products -->
+                                    <div class="mega-column latest-column">
+                                        <h4 class="mega-heading">LATEST PRODUCTS</h4>
+                                        <div class="mega-product-grid">
+                                            <div class="mega-prod-item">
+                                                <div class="mega-prod-img">
+                                                    <img src="{{ asset('images/shop-earrings.png') }}" alt="Product">
+                                                </div>
+                                                <span class="mega-prod-code">K4156</span>
+                                            </div>
+                                            <div class="mega-prod-item">
+                                                <div class="mega-prod-img">
+                                                    <img src="{{ asset('images/shop-bangle-1.png') }}" alt="Product">
+                                                </div>
+                                                <span class="mega-prod-code">T5756</span>
+                                            </div>
+                                            <div class="mega-prod-item">
+                                                <div class="mega-prod-img">
+                                                    <img src="{{ asset('images/shop-bracelet.png') }}" alt="Product">
+                                                </div>
+                                                <span class="mega-prod-code">M598</span>
+                                            </div>
+                                            <div class="mega-prod-item">
+                                                <div class="mega-prod-img">
+                                                    <img src="{{ asset('images/shop-bangle-2.png') }}" alt="Product">
+                                                </div>
+                                                <span class="mega-prod-code">D9921</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Col 3: Featured Image -->
+                                    <div class="mega-column featured-column">
+                                        <div class="mega-featured-img">
+                                            <img src="{{ asset('images/collection-aura.png') }}" alt="Featured Collection">
+                                            <div class="mega-featured-overlay">
+                                                <span>New Collection</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
