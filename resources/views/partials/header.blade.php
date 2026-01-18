@@ -1,4 +1,22 @@
 <header class="site-header">
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-inner">
+                <div class="top-spacer"></div>
+                <div class="top-center">
+                    <span class="shine-text">Exclusive Gold plated jewellery</span>
+                </div>
+                <div class="top-socials">
+                    <a href="https://www.facebook.com/springoocmb/" target="_blank" class="top-social-icon">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/springoo.lk/" target="_blank" class="top-social-icon">
+                         <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="header-inner">
             <!-- Logo Section -->

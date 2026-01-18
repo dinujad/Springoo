@@ -76,9 +76,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="sub-heading">Jewellery For Every Occasion</span>
-                <div class="divider-wrapper">
-                    <img src="{{ asset('images/divider.png') }}" alt="Divider" class="section-divider">
-                </div>
+                <!-- Divider Removed -->
                 <h2 class="main-heading">Our Jewellery</h2>
             </div>
 
@@ -154,9 +152,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="sub-heading">Our Products</span>
-                <div class="divider-wrapper">
-                    <img src="{{ asset('images/divider.png') }}" alt="Divider" class="section-divider">
-                </div>
+                <!-- Divider Removed -->
                 <h2 class="main-heading">SHOP</h2>
             </div>
             

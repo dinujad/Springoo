@@ -86,13 +86,15 @@ h6 {
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--color-accent);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    /* Reduced margin */
     font-weight: 600;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    /* Reduced from 60px */
 }
 
 .divider-wrapper {
@@ -176,17 +178,89 @@ h6 {
 /* =========================================
    4. HEADER
    ========================================= */
+/* =========================================
+   4. HEADER
+   ========================================= */
 .site-header {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 15px 0;
+    /* Remove padding */
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(15, 61, 62, 0.05);
 }
 
+.top-header {
+    background: linear-gradient(to right, #05191a, #0F3D3E, #05191a);
+    padding: 8px 0;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(207, 170, 86, 0.2);
+}
+
+.top-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-spacer {
+    flex: 1;
+    /* Balances the social icons on the right to keep text centered */
+}
+
+.top-center {
+    flex: 2;
+    text-align: center;
+}
+
+.shine-text {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    /* Shine Animation */
+    background: linear-gradient(to right, #bf953f 0%, #fcf6ba 50%, #bf953f 100%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.top-socials {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.top-social-icon {
+    width: 18px;
+    height: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.top-social-icon:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(207, 170, 86, 0.5));
+}
+
 .header-inner {
+    padding: 15px 0;
+    /* Restoring padding for main header content */
     display: flex;
     justify-content: space-between;
     align-items: center;
