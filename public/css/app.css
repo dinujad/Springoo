@@ -206,9 +206,11 @@ h6 {
     align-items: center;
 }
 
-.top-spacer {
+.top-contact {
     flex: 1;
-    /* Balances the social icons on the right to keep text centered */
+    display: flex;
+    justify-content: flex-start;
+    /* Aligns contact to left */
 }
 
 .top-center {
@@ -266,64 +268,58 @@ h6 {
     align-items: center;
 }
 
-/* Header Contact Section */
-.header-contact {
+/* Header Actions */
+.header-actions {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
-.contact-wrapper {
+.action-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* Luxury Gold Border */
+    border: 1px solid var(--color-accent);
+    background: #fff;
+    /* Gold Icon */
+    color: var(--color-accent);
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    padding: 8px 20px;
-    /* Gold background style like previous price box */
-    background: #FFF9E6;
-    border: 1px solid #E6C200;
-    border-radius: 6px;
-    /* Slightly rounded rect, not full pill */
-    transition: all 0.3s ease;
-}
-
-.contact-wrapper:hover {
-    background: #FFF0BD;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(218, 165, 32, 0.2);
-}
-
-.contact-icon-box {
-    /* Removed circle background, just icon */
-    background: transparent;
-    width: auto;
-    height: auto;
-    color: #B8860B;
-    /* Dark Gold */
+    justify-content: center;
     font-size: 1.2rem;
-    animation: none;
-    /* Removed pulse for cleaner look */
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(207, 170, 86, 0.2);
 }
 
-.contact-details {
-    display: flex;
-    flex-direction: row;
-    /* Inline with number */
-    align-items: center;
-    gap: 5px;
+.action-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+    /* White icon on gold bg */
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(207, 170, 86, 0.4);
 }
 
-.contact-subtitle {
-    display: none;
-    /* Hide 'Hotline' to keep it direct */
-}
-
-.contact-number {
-    font-size: 1.1rem;
-    font-family: var(--font-heading);
-    color: #0F3D3E;
-    /* Dark Green text for contrast */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-size: 0.7rem;
     font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
 
 .logo-container {
     display: flex;
