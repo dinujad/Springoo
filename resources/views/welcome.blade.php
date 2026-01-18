@@ -67,8 +67,6 @@
                 </div>
             </div>
         </div>
-            </div>
-        </div>
     </section>
 
     <!-- Our Jewellery Section -->
@@ -82,67 +80,64 @@
 
             <div class="jewellery-grid">
                 <!-- Necklace -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-necklace.png') }}" alt="Necklaces">
+                         <img src="{{ asset('images/cat-necklace.png') }}" alt="Necklaces" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Necklaces</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Necklaces</h4>
                     </div>
                 </div>
 
                 <!-- Chains -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-chain.png') }}" alt="Chains">
+                         <img src="{{ asset('images/cat-chain.png') }}" alt="Chains" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Chains</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Chains</h4>
                     </div>
                 </div>
 
                 <!-- Bangles -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-bangle.png') }}" alt="Bangles">
+                         <img src="{{ asset('images/cat-bangle.png') }}" alt="Bangles" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Bangles</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Bangles</h4>
                     </div>
                 </div>
 
                 <!-- Earrings -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-earrings.png') }}" alt="Earrings">
+                         <img src="{{ asset('images/cat-earring.png') }}" alt="Earrings" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Earrings</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Earrings</h4>
                     </div>
                 </div>
 
                 <!-- Rings -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-ring.png') }}" alt="Rings">
+                         <img src="{{ asset('images/cat-ring.png') }}" alt="Rings" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Rings</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Rings</h4>
                     </div>
                 </div>
 
                 <!-- Pendants -->
-                <div class="category-card">
+                <div class="category-card group">
                     <div class="category-image">
-                         <img src="{{ asset('images/cat-pendant.png') }}" alt="Pendants">
+                         <img src="{{ asset('images/cat-pendant.png') }}" alt="Pendants" class="transition-all duration-300 filter sepia(1) hue-rotate-15 contrast-125 group-hover:filter-none">
                     </div>
                     <div class="category-info">
-                        <h4 class="category-title">Pendants</h4>
+                        <h4 class="category-title group-hover:text-primary transition-colors">Pendants</h4>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
             </div>
         </div>
     </section>
