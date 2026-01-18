@@ -21,6 +21,8 @@ Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
 
+Route::view('/services', 'services')->name('services');
+
 Route::get('/product/{id?}', function ($id = 1) {
     // Simulated Product Database
     $products = [

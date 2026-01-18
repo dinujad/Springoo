@@ -118,7 +118,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">SERVICES</a></li>
+<li><a href="{{ route('services') }}">SERVICES</a></li>
                     <li><a href="#">PROMOTIONS</a></li>
                     <li><a href="#">CONTACT US</a></li>
                 </ul>
