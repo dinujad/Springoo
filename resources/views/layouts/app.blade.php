@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @stack('styles')
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -32,7 +33,7 @@
     </main>
 
     <footer>
-        <!-- Footer content will go here -->
+        @include('partials.footer')
     </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>

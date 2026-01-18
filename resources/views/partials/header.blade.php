@@ -26,12 +26,17 @@
                 </a>
             </div>
 
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+
             <!-- Navigation Menu -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="#">OUR STORY</a></li>
                     <li class="has-dropdown mega-menu-parent">
-                        <a href="#">JEWELLERY <span class="arrow">▼</span></a>
+                        <a href="{{ route('shop') }}">JEWELLERY <span class="arrow">▼</span></a>
                         <!-- Mega Menu Structure -->
                         <div class="mega-menu">
                             <div class="container">
@@ -119,23 +124,31 @@
                 </ul>
             </nav>
 
-            <!-- Gold Price Section -->
-            <div class="gold-price-info">
-                <div class="gold-icon">
-                    <!-- Simple gold bars icon svg or image -->
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 8H20V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V8Z" fill="#DAA520"/>
-                        <path d="M4 8L6.5 4H17.5L20 8H4Z" fill="#F0E68C"/>
-                        <path d="M8 8V20" stroke="#B8860B" stroke-width="1"/>
-                        <path d="M16 8V20" stroke="#B8860B" stroke-width="1"/>
-                        <path d="M12 8V20" stroke="#B8860B" stroke-width="1"/>
-                    </svg>
-                </div>
-                <div class="price-details">
-                    <div class="date-label">DATE: 14/01/2026</div> <!-- Dynamic date can be added later -->
-                    <div class="price-value">22KT LKR 337,600</div>
-                </div>
+            <!-- Contact Number Section -->
+            <div class="header-contact">
+                <a href="tel:+94765496306" class="contact-wrapper">
+                    <div class="contact-icon-box">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div class="contact-details">
+                        <span class="contact-subtitle">Hotline</span>
+                        <span class="contact-number">076 549 6306</span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.main-nav');
+        
+        if(toggleBtn && nav) {
+            toggleBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        }
+    });
+</script>

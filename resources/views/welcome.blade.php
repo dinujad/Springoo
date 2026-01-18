@@ -6,7 +6,7 @@
         <div class="hero-container">
              <!-- Background image handled in CSS, text overlay here -->
             <div class="hero-text-content">
-                <span class="hero-badge">NEW COLLECTION 2024</span>
+                <span class="hero-badge">NEW COLLECTION 2026</span>
                 <h1 class="hero-title">
                     Eternal Spring<br>
                     <span class="highlight-text">in Every Gem</span>
@@ -270,8 +270,7 @@
     </section>
     </section>
 
-    <!-- Footer Include -->
-    @include('partials.footer')
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

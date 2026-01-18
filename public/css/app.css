@@ -259,11 +259,70 @@ h6 {
 }
 
 .header-inner {
-    padding: 15px 0;
-    /* Restoring padding for main header content */
+    padding: 10px 0;
+    /* Reduced padding slightly */
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Header Contact Section */
+.header-contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 8px 20px;
+    /* Gold background style like previous price box */
+    background: #FFF9E6;
+    border: 1px solid #E6C200;
+    border-radius: 6px;
+    /* Slightly rounded rect, not full pill */
+    transition: all 0.3s ease;
+}
+
+.contact-wrapper:hover {
+    background: #FFF0BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(218, 165, 32, 0.2);
+}
+
+.contact-icon-box {
+    /* Removed circle background, just icon */
+    background: transparent;
+    width: auto;
+    height: auto;
+    color: #B8860B;
+    /* Dark Gold */
+    font-size: 1.2rem;
+    animation: none;
+    /* Removed pulse for cleaner look */
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: row;
+    /* Inline with number */
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-subtitle {
+    display: none;
+    /* Hide 'Hotline' to keep it direct */
+}
+
+.contact-number {
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    color: #0F3D3E;
+    /* Dark Green text for contrast */
+    font-weight: 700;
 }
 
 .logo-container {
@@ -1206,7 +1265,94 @@ section {
 /* =========================================
    12. RESPONSIVENESS
    ========================================= */
+/* =========================================
+   12. RESPONSIVENESS
+   ========================================= */
+/* Mobile Menu Toggle (Hidden on Desktop) */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
 @media (max-width: 992px) {
+    .header-inner {
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .header-contact {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .gold-price-info {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        order: 4;
+        margin-top: 15px;
+        background: #fff;
+        border-top: 2px solid var(--color-accent);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: var(--shadow-md);
+        padding: 20px;
+    }
+
+    .main-nav.active {
+        display: block;
+        animation: fadeUp 0.3s forwards;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .mega-menu {
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        border-top: none;
+        padding-top: 10px;
+    }
+
+    .mega-menu::before {
+        display: none;
+        /* No bridge needed on mobile */
+    }
+
+    .mega-menu-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
     .hero-title {
         font-size: 3rem;
     }
@@ -1226,6 +1372,62 @@ section {
 
     .footer-container {
         flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brand-tagline {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 15px;
+        border-top: 3px solid var(--color-accent);
+        padding-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .footer-heading {
+        margin-bottom: 20px;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .payment-banner-container {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .payment-banner-img {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header-inner {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .top-spacer {
+        display: none;
+    }
+
+    .top-socials {
+        justify-content: center;
     }
 }
 
@@ -1247,7 +1449,7 @@ section {
     position: relative;
     height: 85vh;
     /* Adjustable height */
-    min-height: 600px;
+    min-height: 500px;
     width: 100%;
     /* Placeholder for the user to replace with their Green Saree image */
     background-image: url('../images/editorial-spring.png');
@@ -1421,6 +1623,7 @@ section {
     box-shadow: 0 10px 20px rgba(207, 170, 86, 0.3);
     transform: translateY(-3px);
 }
+
 
 .editorial-btn:hover::before {
     width: 100%;
