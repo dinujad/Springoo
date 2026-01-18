@@ -23,6 +23,7 @@ Route::get('/shop', function () {
 
 Route::view('/services', 'services')->name('services');
 Route::view('/contact', 'contact')->name('contact');
+Route::view('/auth', 'auth')->name('auth');
 
 Route::get('/product/{id?}', function ($id = 1) {
     // Simulated Product Database

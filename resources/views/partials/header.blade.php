@@ -132,7 +132,7 @@
             <!-- Contact Number Section -->
             <!-- Header Actions (Account, Wishlist, Cart) -->
             <div class="header-actions">
-                <a href="#" class="action-btn" title="My Account">
+                <a href="{{ route('auth') }}" class="action-btn" title="My Account">
                     <i class="bi bi-person"></i>
                 </a>
                 <a href="#" class="action-btn" title="Wishlist">
