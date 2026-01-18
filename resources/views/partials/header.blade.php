@@ -120,7 +120,7 @@
                     </li>
 <li><a href="{{ route('services') }}">SERVICES</a></li>
                     <li><a href="#">PROMOTIONS</a></li>
-                    <li><a href="#">CONTACT US</a></li>
+<li><a href="{{ route('contact') }}">CONTACT US</a></li>
                 </ul>
             </nav>
 
