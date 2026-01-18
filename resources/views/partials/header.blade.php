@@ -2,7 +2,12 @@
     <div class="top-header">
         <div class="container">
             <div class="top-header-inner">
-                <div class="top-spacer"></div>
+                <div class="top-contact">
+                    <a href="tel:+94765496306" style="color: white; display: flex; align-items: center; gap: 8px; font-size: 0.9rem;">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>076 549 6306</span>
+                    </a>
+                </div>
                 <div class="top-center">
                     <span class="shine-text">Exclusive Gold plated jewellery</span>
                 </div>
@@ -125,15 +130,17 @@
             </nav>
 
             <!-- Contact Number Section -->
-            <div class="header-contact">
-                <a href="tel:+94765496306" class="contact-wrapper">
-                    <div class="contact-icon-box">
-                        <i class="bi bi-telephone-fill"></i>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-subtitle">Hotline</span>
-                        <span class="contact-number">076 549 6306</span>
-                    </div>
+            <!-- Header Actions (Account, Wishlist, Cart) -->
+            <div class="header-actions">
+                <a href="#" class="action-btn" title="My Account">
+                    <i class="bi bi-person"></i>
+                </a>
+                <a href="#" class="action-btn" title="Wishlist">
+                    <i class="bi bi-heart"></i>
+                </a>
+                <a href="#" class="action-btn" title="Shopping Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
         </div>
